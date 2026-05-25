@@ -5,15 +5,15 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { getAnalytics } from 'firebase/analytics';
 
-// Firebase configuration
+// Firebase configuration - using environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyD4HRsEuLFiWl3hjLHxgfC11ejETsUGZnA",
-  authDomain: "oil-gas-f78c8.firebaseapp.com",
-  projectId: "oil-gas-f78c8",
-  storageBucket: "oil-gas-f78c8.firebasestorage.app",
-  messagingSenderId: "116758914066",
-  appId: "1:116758914066:web:60c33e8bc77bc8293964cb",
-  measurementId: "G-96ZKZ1DC5H"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "",
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "oil-gas-f78c8.firebaseapp.com",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "oil-gas-f78c8",
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "oil-gas-f78c8.firebasestorage.app",
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || "",
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || ""
 };
 
 // Initialize Firebase
